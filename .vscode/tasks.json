@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build asm i386",
+            "type": "shell",
+            "command": "cd ${fileDirname} && nasm -f elf32 ${fileBasename} -g -F dwarf && gcc -m32 ${fileBasenameNoExtension}.o printAnswer.c -o ${fileBasenameNoExtension} -no-pie && ./${fileBasenameNoExtension}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "statusbar": {
+                    "label": "Create nasm",
+                    "color" : "#ffffff"
+                },
+            }
+                
+        }
+    ]
+}
